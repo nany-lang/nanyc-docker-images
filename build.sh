@@ -10,7 +10,7 @@ build_docker_image() {
 	local file="${name}.dockerfile"
 	echo -e "\n::: building ${name}..."
 	(cd "${folder}" \
-		&& docker build -f "./${file}" -t "nanyc/build:${name}" .)
+		&& docker build --pull=true -f "./${file}" -t "nanyc/build:${name}" .)
 }
 
 please_publish() {
